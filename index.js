@@ -1,6 +1,6 @@
 const url = require('url');
 
-class obj{
+class OBJ{
     constructor(obj){
         for(i of Object.keys(obj)){
             this[i] = obj[i]
@@ -25,3 +25,4 @@ class obj{
     }
 
 }
+module.exports = OBJ

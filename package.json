@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Hershy Heilpern",
-  "license": "GNU"
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hershyheilpern/httppbj.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hershyheilpern/httppbj/issues"
+  },
+  "homepage": "https://github.com/hershyheilpern/httppbj#readme"
 }
