@@ -10,6 +10,15 @@ class OBJ{
         this.baseurl= decodeURIComponent(this.req.url).split(/\/|\?/g)[1]
         this.qry=url.parse(this.req.url,true).query
         this.surl = decodeURIComponent(this.req.url).split("?")[0].split(this.baseurl)[1]
+        if(this.req.headers.referer){// && obj.req.headers.referer.startsWith(`https://${obj.req.headers.host}/`)){
+            this.referer = this.req.headers.referer,
+            this.referer_domain = this.req.headers.referer.split("/")[2],
+            this.referer_url=this.req.headers.referer.split(this.referer_domain)[1],
+            this.referer_baseurl= decodeURIComponent(this.referer_url).split(/\/|\?/g)[1]
+            this.referer_qry=url.parse(this.referer_url,true).query
+            this.referer_surl = decodeURIComponent(this.referer_url).split("?")[0].split(this.referer_baseurl)[1]
+        }
+    
     }
     send403(){
         this.res.writeHead(403)
