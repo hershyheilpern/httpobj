@@ -20,17 +20,17 @@ class OBJ{
         }
     
     }
-    send403(){
+    send403(err){
         this.res.writeHead(403)
-        this.res.end()
+        this.res.end(err)
     }
-    send404(){
+    send404(err){
         this.res.writeHead(404)
-        this.res.end()
+        this.res.end(err)
     }
-    send500(){
+    send500(err){
         this.res.writeHead(500)
-        this.res.end()
+        this.res.end(err)
     }
 
 }
