@@ -2,7 +2,7 @@ const url = require('url');
 
 class OBJ{
     constructor(obj){
-        for(i of Object.keys(obj)){
+        for(let i of Object.keys(obj)){
             this[i] = obj[i]
         }
         this.domain= this.req.headers.host
