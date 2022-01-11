@@ -9,7 +9,9 @@ class OBJ{
         this.url= decodeURIComponent(this.req.url.split("?")[0])
         this.baseurl= decodeURIComponent(this.req.url).split(/\/|\?/g)[1]
         this.qry=url.parse(this.req.url,true).query
-        this.surl = decodeURIComponent(this.req.url).split("?")[0].split(this.baseurl)[1]
+        let arysurl = decodeURIComponent(this.req.url).split("?")[0].split(this.baseurl)
+        arysurl.shift()
+        this.surl = arysurl.join(this.baseurl)
         if(this.req.headers.referer){
             this.referer = this.req.headers.referer,
             this.referer_domain = this.req.headers.referer.split("/")[2],
