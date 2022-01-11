@@ -17,8 +17,12 @@ class OBJ{
             this.referer_domain = this.req.headers.referer.split("/")[2],
             this.referer_url=this.req.headers.referer.split(this.referer_domain)[1],
             this.referer_baseurl= decodeURIComponent(this.referer_url).split(/\/|\?/g)[1]
-            this.referer_qry=url.parse(this.referer_url,true).query
-            this.referer_surl = decodeURIComponent(this.referer_url).split("?")[0].split(this.referer_baseurl)[1]
+            this.referer_qry = url.parse(this.referer_url, true).query
+            let aryreferer_surl = decodeURIComponent(this.referer_url).split("?")[0].split(this.referer_baseurl)
+            aryreferer_surl.shift()
+            this.referer_surl = aryreferer_surl.join(this.referer_baseurl)
+
+            // this.referer_surl = decodeURIComponent(this.referer_url).split("?")[0].split(this.referer_baseurl)[1]
         }
         this.func = {
             count:0,
