@@ -30,7 +30,7 @@ class OBJ{
         }
     
     }
-    contentType= {
+    contentType = {
       html: "text/html",
       js: "text/javascript",
       css: "text/css",
@@ -40,7 +40,7 @@ class OBJ{
       wav: "audio/wav",
       svg: "image/svg+xml",
       svgz: "image/svg+xml",
-    },
+    }
 
     send403(err){
         this.res.writeHead(403)
