@@ -30,7 +30,7 @@ class OBJ{
         }
     
     }
-    contentType: {
+    contentType= {
       html: "text/html",
       js: "text/javascript",
       css: "text/css",
