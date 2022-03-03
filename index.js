@@ -28,9 +28,7 @@ class OBJ{
             count:0,
             list:[]
         }
-    
-    }
-    contentType = {
+        this.contentType = {
       html: "text/html",
       js: "text/javascript",
       css: "text/css",
@@ -40,6 +38,9 @@ class OBJ{
       wav: "audio/wav",
       svg: "image/svg+xml",
       svgz: "image/svg+xml",
+    }
+
+    
     }
 
     send403(err){
