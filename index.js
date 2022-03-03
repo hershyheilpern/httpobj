@@ -30,6 +30,18 @@ class OBJ{
         }
     
     }
+    contentType: {
+      html: "text/html",
+      js: "text/javascript",
+      css: "text/css",
+      json: "application/json",
+      png: "image/png",
+      jpg: "image/jpg",
+      wav: "audio/wav",
+      svg: "image/svg+xml",
+      svgz: "image/svg+xml",
+    },
+
     send403(err){
         this.res.writeHead(403)
         this.res.end(err)
