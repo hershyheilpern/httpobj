@@ -80,7 +80,7 @@ read_body(obj, cb) {
         file_reader(obj.path, (err, data) => {
            if (err) {
                 console.log(err);
-               let err_func = (obj.file_err||send500)
+               let err_func = (obj.file_err||self.send500)
                err_func(err,obj)
             } else {
                 if (self.file_content_type) {
