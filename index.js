@@ -72,5 +72,30 @@ read_body(obj, cb) {
             cb(obj);
         });
     }
+        sendFile(obj) {
+        obj.path = obj.path.replace(/\.\./gm, "")
+        let self = this
+        fs.readFile(obj.path, (err, data) => {
+            if (err) {
+                console.log(err);
+                self[("file_err"||"send500")](err,obj)
+            } else {
+                if (self.file_content_type) {
+                    self.res.writeHead(200, { 'content-type': self.file_content_type })
+                } else if (self.contentType[self.ext]) {
+                    self.res.writeHead(200, { 'content-type': self.contentType[self.ext] })
+                } else {
+                    self.res.writeHead(200, { 'content-type': 'text/html' })
+                }
+                self.res.write(data);
+                self.res.end()
+            }
+        });
+
+    }
+
+    
+    
+    
 }
 module.exports = OBJ
