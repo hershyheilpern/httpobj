@@ -76,11 +76,8 @@ read_body(obj, cb) {
         sendFile(obj) {
         obj.path = obj.path.replace(/\.\./gm, "")
         let self = this
-         let file_reader = {
-            fs: fs.readFile,
-            custom:obj.file_reader
-        }
-        file_reader[("custom"||"fs")](obj.path, (err, data) => {
+         let file_reader = (obj.file_reader||fs.readFile)
+        file_reader(obj.path, (err, data) => {
            if (err) {
                 console.log(err);
                 self[("file_err"||"send500")](err,obj)
