@@ -1,4 +1,5 @@
 const url = require('url');
+const fs = require('fs');
 
 class OBJ{
     constructor(obj){
