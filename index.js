@@ -110,6 +110,7 @@ read_body(obj, cb) {
         obj.path = obj.path.replace(/\.\./gm, "")
         let self = this
          let file_reader = (obj.file_reader||fs.readFile)
+         this.file_content_type = (this.file_content_type || this.ext || "html")
         file_reader(obj.path, (err, data) => {
            if (err) {
                 console.log(err);
