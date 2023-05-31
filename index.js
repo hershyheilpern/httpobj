@@ -46,6 +46,17 @@ class OBJ{
       wav: "audio/wav",
       svg: "image/svg+xml",
       svgz: "image/svg+xml",
+      gif:"image/gif",
+      ico:"image/x-icon",
+      ttf:"font/ttf",
+      woff:"font/woff",
+      woff2:"font/woff2",
+      mp3:"audio/mpeg",
+      mp4:"video/mp4",
+      webm:"video/webm",
+      wav:"audio/wav",
+      ogg:"audio/ogg",
+
     }
 
     
