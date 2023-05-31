@@ -8,10 +8,12 @@ class OBJ{
         }
         this.domain= this.req.headers.host
         this.url= decodeURIComponent(this.req.url.split("?")[0])
-        this.baseurl= decodeURIComponent(this.req.url).split(/\/|\?/g)[1]
+        this.urlary = decodeURIComponent(this.url).split(/\//g)
+        this.urlary.shift()
+        this.baseurl= this.urlary[0]
+//         this.baseurl= decodeURIComponent(this.req.url).split(/\/|\?/g)[1]
         this.qry=url.parse(this.req.url,true).query
         let arysurl = decodeURIComponent(this.req.url).split("?")[0].split(this.baseurl)
-        let urlary = decodeURIComponent(this.req.url).split("?")[0].split(/\//g)
         arysurl.shift()
         this.surl = arysurl.join(this.baseurl)
         this.ext = this.url.split(".").pop()
