@@ -16,7 +16,10 @@ class OBJ{
         let arysurl = decodeURIComponent(this.req.url).split("?")[0].split(this.baseurl)
         arysurl.shift()
         this.surl = arysurl.join(this.baseurl)
-        this.ext = this.url.split(".").pop()
+        let ext = this.url.split(".")
+        if(ext.lenght > 1){
+            this.ext = ext.pop()
+        }
         if(this.req.headers.referer){
             this.referer = this.req.headers.referer,
             this.referer_domain = this.req.headers.referer.split("/")[2],
