@@ -57,6 +57,22 @@ class OBJ{
         this.res.writeHead(500)
         this.res.end(err)
     }
+read_body_json(obj, cb) {
+        let body = "";
+        let self = this;
+        this.req.on("data", function (data) {
+            body += data;
+        });
+        this.req.on("end", function () {
+            self.body = body;
+            try{
+                self.post = JSON.parse(body);
+            }catch(e){
+                console.error(e)
+            }
+            cb(obj);
+        });
+    }
 read_body(obj, cb) {
         let body = "";
         let self = this;
@@ -65,11 +81,11 @@ read_body(obj, cb) {
         });
         this.req.on("end", function () {
             self.body = body;
-//             try{
+            try{
                 self.post = JSON.parse(body);
-//             }catch(e){
-//                 console.error(e)
-//             }
+            }catch(e){
+                self.post = body
+            }
             cb(obj);
         });
     }
