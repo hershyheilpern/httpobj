@@ -17,7 +17,7 @@ class OBJ{
         arysurl.shift()
         this.surl = arysurl.join(this.baseurl)
         let ext = this.url.split(".")
-        if(ext.lenght > 1){
+        if(ext.length > 1){
             this.ext = ext.pop()
         }
         if(this.req.headers.referer){
