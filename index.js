@@ -62,17 +62,22 @@ class OBJ{
     
     }
 
+    send401(err){
+        this.res.writeHead(401)
+        this.res.end(err||"401 Unauthorized")
+    
+    }
     send403(err){
         this.res.writeHead(403)
-        this.res.end(err)
+        this.res.end(err||"403 Forbidden")
     }
     send404(err){
         this.res.writeHead(404)
-        this.res.end(err)
+        this.res.end(err||"404 Not Found")
     }
     send500(err){
         this.res.writeHead(500)
-        this.res.end(err)
+        this.res.end(err||"500 Internal Server Error")
     }
 read_body_json(obj, cb) {
         let body = "";
