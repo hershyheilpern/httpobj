@@ -118,7 +118,7 @@ read_body(obj, cb) {
          this.file_content_type = (this.file_content_type || this.ext || "html")
         file_reader(obj.path, (err, data) => {
            if (err) {
-                console.log(err);
+                console.error(__dirname,err);
                let err_func = (obj.file_err||self.send500)
                err_func(err,obj)
             } else {
