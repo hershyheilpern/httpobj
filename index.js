@@ -111,6 +111,25 @@ read_body(obj, cb) {
             cb(obj);
         });
     }
+    read_body_p(obj) {
+        return new Promise((resolve,reject)=>{
+            let body = "";
+            let self = this;
+            this.req.on("data", function (data) {
+                body += data;
+            });
+            this.req.on("end", function () {
+                self.body = body;
+                try{
+                    self.post = JSON.parse(body);
+                }catch(e){
+                    self.post = body
+                }
+                resolve(obj);
+            });
+
+        })
+    }
         sendFile(obj) {
         obj.path = obj.path.replace(/\.\./gm, "")
         let self = this
